@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f6f3">
+    <title>Task Manager — Alisher</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="index.html"
+          ><span class="brand-mark">T</span><span>Task Manager</span></a
+        ><span class="student-chip"
+          >Student <strong id="student-id">74014</strong></span
+        >
+      </header>
+      <section class="intro">
+        <p class="eyebrow">YOUR SPACE, YOUR PACE</p>
+        <h1>Task Manager</h1>
+        <p class="hero-line">Make room for<br><span>what matters.</span></p>
+        <p class="intro-copy">
+          A little clarity goes a long way. Keep the next things you need to do
+          all in one place.
+        </p>
+      </section>
+      <section class="workspace" aria-label="Task manager">
+        <form id="task-form" class="task-form">
+          <div class="form-heading">
+            <span class="form-icon">✳</span>
+            <div>
+              <h2 id="form-title">A fresh start</h2>
+              <p>Add a task to your list</p>
+            </div>
+          </div>
+          <label for="task-title">Task</label
+          ><input
+            type="text"
+            id="task-title"
+            name="title"
+            maxlength="160"
+            placeholder="What needs doing?"
+            required
+          ><label for="task-description"
+            >A few details <span>(optional)</span></label
+          ><textarea
+            id="task-description"
+            name="description"
+            rows="3"
+            maxlength="1200"
+            placeholder="Add a note to future you…"
+          ></textarea>
+          <div class="form-actions">
+            <button
+              id="task-submit"
+              class="button button-primary"
+              type="submit"
+            >
+              Add to my list <span>↗</span></button
+            ><button
+              id="task-cancel"
+              class="button button-quiet"
+              type="button"
+              hidden
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+        <section class="list-panel">
+          <div class="list-head">
+            <div>
+              <p class="eyebrow">ONE THING AT A TIME</p>
+              <h2>Your list <span id="task-count">0</span></h2>
+            </div>
+            <span class="list-spark">✷</span>
+          </div>
+          <p
+            id="status-message"
+            class="status-message"
+            role="status"
+            aria-live="polite"
+          >
+            Connecting to your task list…
+          </p>
+          <div id="task-list" class="task-list"></div>
+        </section>
+      </section>
+      <footer class="footer">
+        <span>Small steps still move you forward.</span
+        ><a id="contribution-link" href="contribution.html"
+          >A note from a teammate <span>↗</span></a
+        >
+      </footer>
+    </main>
+  </body>
+</html>

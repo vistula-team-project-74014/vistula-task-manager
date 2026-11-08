@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #25372f;
+  background: #f4f6f3;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --ink: #25372f;
+  --muted: #77837c;
+  --green: #39745d;
+  --line: #e5eae5;
+  --paper: #fff;
+  --mint: #e6f0e9;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% -20%, #e1ede4 0%, transparent 53%), #f4f6f3;
+}
+.shell {
+  width: min(100% - 48px, 1050px);
+  margin: auto;
+}
+.topbar {
+  height: 83px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e6ebe5;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+}
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  background: var(--green);
+  color: white;
+  font-weight: 800;
+}
+.student-chip {
+  font-size: 12px;
+  color: var(--muted);
+  background: white;
+  border: 1px solid var(--line);
+  padding: 8px 12px;
+  border-radius: 999px;
+}
+.student-chip strong {
+  color: var(--green);
+  margin-left: 4px;
+}
+.intro {
+  padding: 66px 0 36px;
+  max-width: 560px;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  color: var(--green);
+  margin: 0 0 12px;
+}
+.intro h1 {
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  margin: 0 0 8px;
+}
+.hero-line {
+  font-family: Manrope, sans-serif;
+  font-size: clamp(40px, 6vw, 62px);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.06em;
+  margin: 0;
+}
+.hero-line span {
+  color: var(--green);
+}
+.intro-copy {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 410px;
+  margin-top: 17px;
+}
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
+  gap: 18px;
+  align-items: start;
+}
+.task-form,
+.list-panel {
+  background: white;
+  border: 1px solid #e9ede9;
+  border-radius: 17px;
+  box-shadow: 0 12px 38px #243d2c0a;
+}
+.task-form {
+  padding: 24px;
+}
+.form-heading {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.form-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  background: var(--mint);
+  border-radius: 12px;
+  color: var(--green);
+  font-size: 22px;
+}
+.form-heading h2 {
+  font-size: 15px;
+  margin: 0 0 3px;
+}
+.form-heading p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0;
+}
+.task-form label {
+  display: block;
+  font-weight: 600;
+  font-size: 11px;
+  margin: 0 0 7px;
+}
+.task-form label span {
+  color: #9aa39e;
+  font-weight: 400;
+}
+.task-form input,
+.task-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 11px 12px;
+  font: inherit;
+  font-size: 12px;
+  background: #fcfdfc;
+  outline: 0;
+  margin-bottom: 17px;
+}
+.task-form textarea {
+  resize: vertical;
+  min-height: 76px;
+}
+.task-form input:focus,
+.task-form textarea:focus {
+  border-color: #8fb4a0;
+  box-shadow: 0 0 0 3px #eaf3ed;
+}
+.form-actions {
+  display: flex;
+  gap: 8px;
+}
+.button {
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 14px;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.button-primary {
+  background: var(--green);
+  color: white;
+}
+.button-primary span {
+  padding-left: 13px;
+}
+.button-quiet {
+  background: #f1f4f1;
+  color: var(--muted);
+}
+.list-panel {
+  min-height: 250px;
+  padding: 24px;
+}
+.list-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.list-head .eyebrow {
+  margin-bottom: 7px;
+}
+.list-head h2 {
+  font-size: 22px;
+  margin: 0;
+}
+.list-head h2 span {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  background: var(--mint);
+  color: var(--green);
+  font-size: 10px;
+  border-radius: 50%;
+}
+.list-spark {
+  color: #d99c69;
+  font-size: 24px;
+}
+.status-message {
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 14px 0;
+}
+.status-message:empty {
+  display: none;
+}
+.status-message.error {
+  color: #ae5145;
+}
+.status-message.success {
+  color: var(--green);
+}
+.task-list {
+  display: grid;
+  gap: 9px;
+}
+.task-item {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) auto;
+  gap: 11px;
+  align-items: start;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  padding: 13px 12px;
+}
+.task-check {
+  width: 19px;
+  height: 19px;
+  border: 1.5px solid #b7c5ba;
+  border-radius: 6px;
+  background: white;
+  color: white;
+  padding: 0;
+  cursor: pointer;
+}
+.is-complete .task-check {
+  background: var(--green);
+}
+.task-copy {
+  min-width: 0;
+}
+.task-copy h3 {
+  font-size: 12px;
+  margin: 0 0 4px;
+  overflow-wrap: anywhere;
+}
+.task-copy p {
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.task-status {
+  font-size: 9px;
+  color: var(--green);
+  margin-top: 7px;
+  display: inline-block;
+}
+.is-complete .task-copy h3 {
+  text-decoration: line-through;
+  color: #89958e;
+}
+.task-controls {
+  display: flex;
+  gap: 4px;
+}
+.icon-button {
+  border: 0;
+  background: transparent;
+  color: #78857c;
+  font:
+    600 10px "DM Sans",
+    sans-serif;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 6px;
+}
+.empty-state {
+  padding: 22px 14px;
+  text-align: center;
+}
+.empty-icon {
+  font-size: 24px;
+  color: #9eb6a4;
+  margin: 0 0 6px;
+}
+.empty-state h3 {
+  font-size: 12px;
+  margin: 0 0 4px;
+}
+.empty-state p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 1px 30px;
+  color: #929d95;
+  font-size: 10px;
+}
+.footer a {
+  color: var(--green);
+  text-decoration: none;
+  font-weight: 600;
+}
+@media (max-width: 720px) {
+  .shell {
+    width: min(100% - 30px, 520px);
+  }
+  .topbar {
+    height: 69px;
+  }
+  .intro {
+    padding: 44px 0 26px;
+  }
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+  .task-form,
+  .list-panel {
+    padding: 20px;
+  }
+  .footer {
+    padding-top: 19px;
+    flex-wrap: wrap;
+  }
+}
