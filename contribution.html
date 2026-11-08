@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team Contribution</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; font: 16px/1.6 system-ui, sans-serif; color: #18352e; background: #f3f5f0; }
+    main { width: min(100%, 520px); padding: 32px; border: 1px solid #dce4db; border-radius: 16px; background: white; }
+    h1 { margin-top: 0; line-height: 1.2; }
+    button { padding: 12px 18px; border: 0; border-radius: 8px; font: inherit; color: white; background: #245c47; cursor: pointer; }
+    button:disabled { opacity: .6; cursor: wait; }
+    button:focus-visible, a:focus-visible { outline: 3px solid #b38a34; outline-offset: 4px; }
+    #contributor-student-id { min-height: 1.6em; overflow-wrap: anywhere; font-weight: 600; }
+    a { color: #245c47; text-underline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Team Contribution</h1>
+    <p>Load the contributing student's ID from the project's JSON file.</p>
+    <button id="load-contributor" type="button">Show Contributor</button>
+    <p id="contributor-student-id" role="status" aria-live="polite"></p>
+    <a href="index.html">Back to Task Manager</a>
+  </main>
+  <script>
+    "use strict";
+    const button = document.getElementById("load-contributor");
+    const output = document.getElementById("contributor-student-id");
+    button.addEventListener("click", async () => {
+      button.disabled = true;
+      output.textContent = "Loading contributor…";
+      try {
+        const response = await fetch("contribution.json", { cache: "no-store", signal: AbortSignal.timeout(15000) });
+        if (!response.ok) throw new Error(`Request failed (${response.status}).`);
+        const data = await response.json();
+        if (typeof data.contributorStudentId !== "string" || !/^\d+$/.test(data.contributorStudentId)) {
+          throw new Error("A valid contributor student ID is missing from contribution.json.");
+        }
+        output.textContent = `Contributor Student ID: ${data.contributorStudentId}`;
+      } catch (error) {
+        output.textContent = `Unable to load contributor. ${error.message} Please try again.`;
+      } finally {
+        button.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
