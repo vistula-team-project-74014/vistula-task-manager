@@ -6,8 +6,10 @@ A task manager by Alisher Sharofiddinov (Vistula student ID **74014**), built wi
 
 - Repository: https://github.com/vistula-team-project-74014/vistula-task-manager
 - App: https://vistula-team-project-74014.github.io/vistula-task-manager/
-- Incoming collaboration pull request: pending Aldiyar's contribution.
-- Outgoing collaboration pull request: pending Aldiyar's repository.
+- Contributor page: https://vistula-team-project-74014.github.io/vistula-task-manager/contribution.html
+- Contributor JSON: https://vistula-team-project-74014.github.io/vistula-task-manager/contribution.json
+- Incoming collaboration pull request (Aldiyar, ID 73259): https://github.com/vistula-team-project-74014/vistula-task-manager/pull/1
+- Outgoing collaboration pull request (Alisher, ID 74014): https://github.com/vistula-team-project-73259/vistula-task-manager/pull/1
 
 ## Supabase setup
 
@@ -15,4 +17,4 @@ The demonstration project is configured in `config.json`. The `schema.sql` file 
 
 ## GitHub Pages
 
-GitHub Pages serves the repository root from `main`. The partner must provide `contribution.html` and `contribution.json` through a pull request, which the repository owner reviews and merges.
+GitHub Pages serves the repository root from `main`. Aldiyar added `contribution.html` and `contribution.json` through the incoming pull request, which was reviewed and merged by this repository owner.
